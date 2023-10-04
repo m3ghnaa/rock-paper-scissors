@@ -4,6 +4,14 @@ const randomIndex = Math.floor(Math.random() * choices.length);
 return choices[randomIndex];
 }
 
+function getUserChoice() {
+    let userChoice = prompt("Choose Rock, Paper, or Scissors:").toLowerCase();
+    while (!['rock', 'paper', 'scissors'].includes(userChoice).toLowerCase() ){
+        userChoice = prompt("Invalid choice. Please choose Rock, Paper or Scissors:").toLowerCase();
+    }
+    return userChoice;
+}
+
 function playRound(playerSelection, computerSelection) {
     const playerChoice = playerSelection.toLowerCase();
     const choices = ['rock', 'paper', 'scissors'];
@@ -23,6 +31,8 @@ function playRound(playerSelection, computerSelection) {
     
     
 }
+
+
 
 const computerSelection = getComputerChoice()
 console.log(playRound('Rock', computerSelection));
