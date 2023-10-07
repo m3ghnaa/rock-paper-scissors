@@ -69,7 +69,6 @@
             }
 
             .result {
-                padding-top: 5vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -103,6 +102,17 @@
 
     <body>
         <h1> Let's play! 👊 ✋ ✌ </h1>
+        <div class = "container result">
+            <div id="winGif" style="display: none;">
+                <img src="https://media.giphy.com/media/kyuPkwEZuZxLsbVuyF/giphy.gif" alt="You Win GIF" id="winGifImage">
+            </div>
+            <div id="loseGif" style="display: none;">
+                <img src="https://media.giphy.com/media/EqNG7fAZRhTLr5NG3N/giphy.gif" alt="You Lose GIF" id="loseGifImage">
+            </div>
+        <div id="results"></div>
+        <div id="score"></div>
+        <button id="reset" style = "display: none;">Reset</button>
+        </div>  
         <div class = "container">
         <div class = "row">
         <div class = "col-md-12">
@@ -121,17 +131,7 @@
         </div>
     </div>
 
-    <div class = "container result">
-        <div id="winGif" style="display: none;">
-            <img src="https://media.giphy.com/media/kyuPkwEZuZxLsbVuyF/giphy.gif" alt="You Win GIF" id="winGifImage">
-        </div>
-        <div id="loseGif" style="display: none;">
-            <img src="https://media.giphy.com/media/EqNG7fAZRhTLr5NG3N/giphy.gif" alt="You Lose GIF" id="loseGifImage">
-        </div>
-    <div id="results"></div>
-    <div id="score"></div>
-    <button id="reset" style = "display: none;">Reset</button>
-    </div>      
+    
         <script src = "app.js"></script>
     </body>
 </html>
