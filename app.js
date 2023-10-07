@@ -47,8 +47,10 @@ function updateScore() {
 function endGame() {
     if (userScore === 5) {
         resultsDiv.textContent = "You win the game!";
+        document.getElementById('winGif').style.display = 'block';
     } else if (computerScore === 5) {
         resultsDiv.textContent = "You lose the game!";
+        document.getElementById('loseGif').style.display = 'block';
     }
 
     resetButton.style.display = 'block';
@@ -63,6 +65,9 @@ function endGame() {
         scoreDiv.textContent = `User: ${userScore} | Computer: ${computerScore}`;
         resultsDiv.textContent = '';
         resetButton.style.display = 'none';
+
+        document.getElementById('winGif').style.display = 'none';
+        document.getElementById('loseGif').style.display = 'none';
 
         gameButtons.forEach((button) => {
             button.style.display = 'block';
