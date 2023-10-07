@@ -29,12 +29,17 @@
                 height:20vh;
                 width: 100%;
                 border: 1px solid black;
-                margin-top: 3vh;
+                margin-top: 2vh;
                 transition: 0.5s;
                 font-family: 'Pixelify Sans', cursive;
                 font-size: 3vh;
                 border-radius: 20%;
-                border: 10px solid rgb(221, 205, 55);
+                border: 1px solid rgb(221, 205, 55);
+                transition: height 0.3s;
+            }
+
+            .game-button:hover {
+                height: 22vh;
             }
             .container {
                 display: flex;
@@ -42,7 +47,7 @@
                 align-items:center
             }
 
-            #rock:hover {
+            #rock{
                 background-image: url('rock.jpg');
                 background-size: 100% 100%;
                 color: transparent;
@@ -50,13 +55,13 @@
                 
             }
 
-            #paper:hover {
+            #paper{
                 background-image: url('paper.jpg');
                 background-size: 100% 100%;
                 color: transparent
             }
 
-            #scissors:hover {
+            #scissors {
                 background-image: url('scissor.jpg');
                 background-size: 100% 100%;
                 color: transparent
@@ -76,12 +81,14 @@
 
             #reset {
                 font-size: 3vh;
-                margin-top:3vh
+                font-weight: 500;
+                margin-top:3vh;
+                color: rgb(221, 205, 55);
+                background-color: black;
             }
 
             #results{
                 font-size: 3vh;
-                margin-top: 3vh;
             }
 
             #score {
