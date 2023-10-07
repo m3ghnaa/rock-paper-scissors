@@ -59,7 +59,7 @@ function endGame() {
     });
 
     resetButton.addEventListener('click', ()=> {
-        alert("Game has been reset. Click Ok to play again.");
+        alert("Game has been reset. Play again ?");
         userScore = 0;
         computerScore = 0;
         scoreDiv.textContent = `User: ${userScore} | Computer: ${computerScore}`;
