@@ -122,6 +122,21 @@
                 color: #004242;
             }
 
+            #landingScreen h1 {
+            overflow: hidden; /* Hide overflow text */
+            white-space: nowrap; /* Display text in a single line */
+            animation: typewriter 2s steps(40) 1s 1 normal both;
+        }
+
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
             #startGameButton {
                 background-color: #004242;
                 color: beige;
@@ -163,16 +178,16 @@
             <h1 class = "display-4">Welcome to Rock, Paper, Scissors!</h1>
             <p class = "display-5">Prepare for an epic showdown! To start the game, choose your weapon wisely:</p>
             <ul class = "display-6">
-                <li>Rock, the timeless classic!</li>
-                <li>Paper, the versatile victor!</li>
-                <li>Scissors, the swift and sharp choice!</li>
+                <li><span style = "color: brown">Rock, the timeless classic!</span></li>
+                <li><span style = "color: brown">Paper, the versatile victor!</span></li>
+                <li><span style = "color: brown">Scissors, he swift and sharp choice!</span></li>
             </ul>
             <p class = "display-6">Your goal: Reach 5 points before your virtual opponent. May the best player win!</p>
             <button id="startGameButton" class = "display-5">Commence Battle</button>
         </div>
         
         <div id  = "gameScreen">
-        <h1 class = "display-1"> Let's play! 👊 ✋ ✌ </h1>
+        <h1 class = "display-1"> Let's play! 👊✋✌ </h1>
 
 
         <div class = "container result py-5 display-6">
