@@ -4,8 +4,8 @@
             Rock, Paper, Scissors
         </title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Young+Serif&display=swap" rel="stylesheet">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -14,34 +14,34 @@
         <style>
 
             body {
-                background-color: 	#004242;
-                font-family: 'Short Stack', cursive;
+                background-color: black;
             }
-
-            
 
             h1 {
                 text-align: center;
-                color: beige;
-                padding: 30px;
-                letter-spacing: 1.2px;
-                font-family: 'Black Ops One';
-                
-            }
-
-            .game-button:hover {
-                border: 3px solid beige;   
+                font-family: 'Pixelify Sans', cursive;
+                padding: 50px;
+                color: white;
+                font-size: 4vh;
             }
 
             .game-button {
-                height: 20vh;
-                max-width: 34vw;
-                margin-top: 1vh;
+                height:20vh;
+                width: 100%;
+                border: 1px solid black;
+                margin-top: 2vh;
+                transition: 0.5s;
+                font-family: 'Pixelify Sans', cursive;
+                font-size: 3vh;
                 border-radius: 20%;
-                background-color: transparent;
-                transition: border 0.2s
+                border: 1px solid rgb(221, 205, 55);
+                transition: height 0.3s;
+                color: black;
             }
 
+            .game-button:hover {
+                height: 22vh;
+            }
             .container {
                 display: flex;
                 justify-content: space-around;
@@ -49,21 +49,23 @@
             }
 
             #rock{
-                background-image: url('rock.png');
-                background-size: 100% 100%;             
+                background-image: url('rock.jpg');
+                background-size: 100% 100%;
+                color: transparent;
+                
                 
             }
 
             #paper{
-                background-image: url('paper.png');
+                background-image: url('paper.jpg');
                 background-size: 100% 100%;
-                
+                color: transparent
             }
 
             #scissors {
-                background-image: url('scissor.png');
+                background-image: url('scissor.jpg');
                 background-size: 100% 100%;
-                
+                color: transparent
             }
 
             .result {
@@ -71,144 +73,63 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                color: goldenrod
-                
+                color: white;
+                font-family: 'Pixelify Sans', cursive;
+                color: rgb(221, 205, 55);
+
             }
 
             #reset {
-                color: #004242;
-                background-color: beige;
+                font-size: 3vh;
+                font-weight: 500;
+                margin-top:3vh;
+                color: rgb(221, 205, 55);
+                background-color: black;
             }
 
-          
+            #results{
+                font-size: 3vh;
+            }
 
             #score {
-                font-family: 'IBM Plex Mono', monospace;
-                
-            }
-
-            audio {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
-
-            li {
-                list-style-type:none;
-            }
-
-
-
-
-            #landingScreen {
-                position: absolute;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: beige;
-                color: #004242;
-                transition: transform 1s ease-in-out;
-               z-index: 2;
-
-                
-            }
-
-            #landingScreen > h1 {
-                color: #004242;
-            }
-
-            #startGameButton {
-                background-color: #004242;
-                color: beige;
-                cursor: pointer;
-                transition: transform 0.8s ease-in-out;
-            }
-
-            #startGameButton:hover {
-        transform: scale(1.5);
-    }
-
-            #gameScreen {
-                display: none;
-                justify-content: center; /* Center content horizontally */
-    align-items: center;
-            transform: translateX(-100%); 
-            z-index: 1;
-            position: absolute;
-            top: 0;
-            left: 100%; /* Start hidden to the right */
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+                font-family: 'Young Serif', serif;
+                font-size: 2vh;
             }
 
             
         </style>
-
     </head>
 
     <body>
-
-        <audio id = "win" src = "win.mp3"></audio>
-        <audio id = "lose" src = "lose.mp3"></audio>
-        <audio id = "end-win" src = "end_win.mp3"></audio>
-        <audio id = "end-lose" src = "end_lose.mp3"></audio>
-
-        <div id="landingScreen" class = "container-fluid text-center py-5" >
-            <h1 class = "display-4">Welcome to Rock, Paper, Scissors!</h1>
-            <p class = "display-5">Prepare for an epic showdown! To start the game, choose your weapon wisely:</p>
-            <ul class = "display-6">
-                <li>Rock, the timeless classic!</li>
-                <li>Paper, the versatile victor!</li>
-                <li>Scissors, the swift and sharp choice!</li>
-            </ul>
-            <p class = "display-6">Your goal: Reach 5 points before your virtual opponent. May the best player win!</p>
-            <button id="startGameButton" class = "display-5">Commence Battle</button>
-        </div>
-        
-        <div id  = "gameScreen">
-        <h1 class = "display-1"> Let's play! 👊 ✋ ✌ </h1>
-
-
-        <div class = "container result py-5 display-6">
- 
-        <div id="results">     
-        </div>
+        <h1> Let's play! 👊 ✋ ✌ </h1>
+        <div class = "container result">
+        <div id="results"></div>
         <div id="winGif" style="display: none;">
-            <img src="https://media.giphy.com/media/kyuPkwEZuZxLsbVuyF/giphy.gif" alt="You Win GIF" id="winGifImage" class = "img-fluid py-5">
+            <img src="https://media.giphy.com/media/kyuPkwEZuZxLsbVuyF/giphy.gif" alt="You Win GIF" id="winGifImage">
         </div>
         <div id="loseGif" style="display: none;">
-            <img src="https://media.giphy.com/media/EqNG7fAZRhTLr5NG3N/giphy.gif" alt="You Lose GIF" id="loseGifImage" class = "img-fluid py-5">
+            <img src="https://media.giphy.com/media/EqNG7fAZRhTLr5NG3N/giphy.gif" alt="You Lose GIF" id="loseGifImage">
         </div>
         <div id="score"></div>
-        <button id="reset" style = "display: none;" class = "my-5">Reset</button>
+        <button id="reset" style = "display: none;">Reset</button>
         </div>  
-        
-
-
-        <div class = "container-fluid px-5">
-        <div class = "row px-5 py-5" style = "display: flex; justify-content: center; align-items: center;">
-        <div class = "col-12 col-lg-3 py-2">
-            <div class = "mx-auto d-block game-button img-fluid img-responsive" id = "rock"></div>
+        <div class = "container">
+        <div class = "row">
+        <div class = "col-md-12">
+            <button class = "game-button" id = "rock">Rock</button>
         </div>
         
-        <div class = "col-12 col-lg-3 py-2">
-            <div class = "mx-auto d-block game-button img-fluid img-responsive" id = "paper"></div>
+        <div class = "col-md-12">
+            <button class = "game-button" id = "paper">Paper</button>
         </div>
        
-        <div class = "col-12 col-lg-3 py-2">
-            <div class = "mx-auto d-block game-button img-fluid img-responsive" id = "scissors"></div>
+        <div class = "col-md-12">
+            <button class = "game-button" id = "scissors">Scissors</button>
         </div>
         
         </div>
         </div>
-        </div>
-    
+    </div>
 
     
         <script src = "app.js"></script>
