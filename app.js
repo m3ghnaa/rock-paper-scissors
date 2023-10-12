@@ -3,6 +3,7 @@ const choices = ['rock', 'paper', 'scissors'];
 let userScore = 0;
 let computerScore = 0;
 
+
 const landingScreen = document.getElementById('landingScreen');
 const gameScreen = document.getElementById('gameScreen');
 const startGameButton = document.getElementById('startGameButton');
@@ -29,37 +30,64 @@ loseSound.playbackRate = 5;
 
 function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
+    
     const playerChoice = playerSelection.toLowerCase();
+    const computerChoiceImage = document.getElementById('computerChoiceImage');
+
+    // Set the computer's choice image based on its selection
+    computerChoiceImage.src = `${computerSelection}.png`;
+
+    // Display the computer's choice element
+    const computerChoiceElement = document.getElementById('computerChoice');
+    computerChoiceElement.style.display = 'block';
+
+    // Hide the computer's choice element after 2 seconds
+    setTimeout(() => {
+        computerChoiceElement.style.display = 'none';
+    }, 500);
 
     if(playerChoice === computerSelection) {
+        console.log(computerSelection);
         resultsDiv.textContent = "It's a tie!";
     } else if (
+        
         (playerChoice === 'rock' && computerSelection === 'scissors') ||
         (playerChoice === 'paper' && computerSelection === 'rock') ||
         (playerChoice === 'scissors' && computerSelection === 'paper')
     ) {
+        console.log(computerSelection);
         winSound.play();
         resultsDiv.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
         userScore ++;
     } else {
+        console.log(computerSelection);
         loseSound.play();
         resultsDiv.textContent = `You Lose! ${computerSelection} beats ${playerChoice}`;
         computerScore ++;
     }
 
     updateScore();
+
+    
+   
 }
+
+
 
 function updateScore() {
     scoreDiv.textContent = `User: ${userScore} | Computer: ${computerScore}`;
 
     if (userScore === 5 || computerScore === 5) {
         endGame();
-    } 
+    }
+    
 }
 
 const endWinSound = document.getElementById('end-win');
 const endLoseSound = document.getElementById('end-lose');
+
+
+
 
 
 function endGame() {
