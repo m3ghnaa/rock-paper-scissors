@@ -24,9 +24,11 @@ function getComputerChoice() {
 }
 
 const winSound = document.getElementById('win');
-winSound.playbackRate = 5;
+winSound.playbackRate = 3;
 const loseSound = document.getElementById('lose');
-loseSound.playbackRate = 5;
+loseSound.playbackRate = 3;
+const tieSound = document.getElementById('tie');
+tieSound.playbackRate = 3;
 
 function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
@@ -48,7 +50,9 @@ function playRound(playerSelection) {
 
     if(playerChoice === computerSelection) {
         console.log(computerSelection);
+        tieSound.play();
         resultsDiv.textContent = "It's a tie!";
+        resultsDiv.style.cssText = 'color: rgb(241, 129, 37)';
     } else if (
         
         (playerChoice === 'rock' && computerSelection === 'scissors') ||
@@ -58,11 +62,13 @@ function playRound(playerSelection) {
         console.log(computerSelection);
         winSound.play();
         resultsDiv.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
+        resultsDiv.style.cssText = 'color: green';
         userScore ++;
     } else {
         console.log(computerSelection);
         loseSound.play();
         resultsDiv.textContent = `You Lose! ${computerSelection} beats ${playerChoice}`;
+        resultsDiv.style.cssText = 'color: red';
         computerScore ++;
     }
 

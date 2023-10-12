@@ -15,7 +15,7 @@
 
             body {
                 background-color: 	#004242;
-                font-family: 'Short Stack', cursive;
+                font-family:'Copperplate' 
             }
 
             
@@ -145,48 +145,54 @@
             }
 
             #startGameButton:hover {
-        transform: scale(1.5);
+                transform: scale(1.5);
     }
 
             #gameScreen {
                 display: none;
                 justify-content: center; /* Center content horizontally */
-    align-items: center;
-            transform: translateX(-100%); 
-            z-index: 1;
-            position: absolute;
-            top: 0;
-            left: 100%; /* Start hidden to the right */
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+                align-items: center;
+                transform: translateX(-100%); 
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                left: 100%; /* Start hidden to the right */
+                width: 100%;
+                height: 100%;
+                z-index: 1;
             }
 
             #computerChoice {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    border-radius: 20%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent;
-    padding: 10px;
-    z-index: 3;
-    animation: displayComputerChoice 0.5s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                border-radius: 20%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                padding: 10px;
+                z-index: 3;
+                animation: displayComputerChoice 0.5s ease-in-out;
 }
 
 @keyframes displayComputerChoice {
     0% {
         opacity: 0;
     }
+    10% {
+        opacity: 0.8;
+    }
     20% {
         opacity: 1;
     }
     80% {
         opacity: 1;
+    }
+    90% {
+        opacity: 0.8;
     }
     100% {
         opacity: 0;
@@ -207,6 +213,7 @@
 
         <audio id = "win" src = "win.mp3" class = "audio"></audio>
         <audio id = "lose" src = "lose.mp3" class = "audio"></audio>
+        <audio id = "tie" src = "tie.mp3" class = "audio"></audio>
         <audio id = "end-win" src = "end_win.mp3" class = "audio"></audio>
         <audio id = "end-lose" src = "end_lose.mp3" class = "audio"></audio>
         
