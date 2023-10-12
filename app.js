@@ -90,7 +90,9 @@ function updateScore() {
 }
 
 const endWinSound = document.getElementById('end-win');
+endWinSound.playbackRate = 3;
 const endLoseSound = document.getElementById('end-lose');
+endLoseSound.playbackRate = 3;
 
 
 
