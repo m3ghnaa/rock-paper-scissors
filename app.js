@@ -51,7 +51,7 @@ function playRound(playerSelection) {
     if(playerChoice === computerSelection) {
         console.log(computerSelection);
         tieSound.play();
-        resultsDiv.textContent = "It's a tie!";
+        resultsDiv.innerHTML = "<u>It's a tie!</u>";
         resultsDiv.style.cssText = 'color: rgb(241, 129, 37)';
     } else if (
         
@@ -61,14 +61,13 @@ function playRound(playerSelection) {
     ) {
         console.log(computerSelection);
         winSound.play();
-        resultsDiv.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
-        resultsDiv.style.cssText = 'color: green';
+        resultsDiv.innerHTML = `<u style = "color: #48A9A6">You Win! ${playerChoice} beats ${computerSelection}</u>`;
+        
         userScore ++;
     } else {
         console.log(computerSelection);
         loseSound.play();
-        resultsDiv.textContent = `You Lose! ${computerSelection} beats ${playerChoice}`;
-        resultsDiv.style.cssText = 'color: red';
+        resultsDiv.innerHTML = `<u style = "color:#E15554">You Lose! ${computerSelection} beats ${playerChoice}</u>`;
         computerScore ++;
     }
 
@@ -81,7 +80,7 @@ function playRound(playerSelection) {
 
 
 function updateScore() {
-    scoreDiv.textContent = `User: ${userScore} | Computer: ${computerScore}`;
+    scoreDiv.innerHTML = `<span style = "color: #48A9A6">You: ${userScore}</span> | <span style = "color: #E15554">Computer: ${computerScore}</span>`;
 
     if (userScore === 5 || computerScore === 5) {
         endGame();
@@ -101,11 +100,11 @@ endLoseSound.playbackRate = 3;
 function endGame() {
     if (userScore === 5) {
         endWinSound.play();
-        resultsDiv.innerHTML = '<span style="background-color: green; color: white; font-weight: bold; letter-spacing: 2px">YOU WIN THE GAME!</span>';
+        resultsDiv.innerHTML = '<span style="background-color: #48A9A6; color: white; font-weight: bold; letter-spacing: 2px">YOU WIN THE GAME!</span>';
         document.getElementById('winGif').style.display = 'block';
     } else if (computerScore === 5) {
         endLoseSound.play();
-        resultsDiv.innerHTML = '<span style="background-color: red; color: white; font-weight: bold; letter-spacing: 2px">YOU LOSE THE GAME!</span>';
+        resultsDiv.innerHTML = '<span style="background-color:E15554; color: white; font-weight: bold; letter-spacing: 2px">YOU LOSE THE GAME!</span>';
         document.getElementById('loseGif').style.display = 'block';
     }
 
@@ -117,12 +116,13 @@ function endGame() {
     document.getElementsByTagName('h1')[1].style.cssText = 'display:none';
 
     resetButton.style.display = 'block';
+    
 
     resetButton.addEventListener('click', ()=> {
         alert("Game has been reset. Play again ?");
         userScore = 0;
         computerScore = 0;
-        scoreDiv.textContent = `User: ${userScore} | Computer: ${computerScore}`;
+        scoreDiv.innerHTML = `<span style = "color: #48A9A6">You: ${userScore}</span> | <span style = "color: #E15554">Computer: ${computerScore}</span>`;
         resultsDiv.textContent = '';
         resetButton.style.display = 'none';
 

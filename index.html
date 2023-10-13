@@ -30,7 +30,7 @@
             }
 
             .game-button:hover {
-                border: 3px solid beige;   
+                background-color:#48A9A6;   
             }
 
             .game-button {
@@ -71,7 +71,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                color: rgb(241, 129, 37)
+              
                 
             }
 
@@ -142,6 +142,8 @@
                 color: beige;
                 cursor: pointer;
                 transition: transform 0.8s ease-in-out;
+                height: 30vh;
+                border: 3px solid brown;
             }
 
             #startGameButton:hover {
@@ -169,10 +171,10 @@
                 align-items: center;
                 position: absolute;
                 border-radius: 20%;
+                background-color:  #E15554;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                background-color: transparent;
                 padding: 10px;
                 z-index: 3;
                 animation: displayComputerChoice 0.5s ease-in-out;
@@ -203,6 +205,9 @@
     height: 25vh;
     
 }
+
+
+
 
 
 
@@ -253,7 +258,8 @@
         <div id="loseGif" style="display: none;">
             <img src="https://media.giphy.com/media/10h8CdMQUWoZ8Y/giphy-downsized-large.gif" alt="You Lose GIF" id="loseGifImage" class = "img-fluid py-5">
         </div>
-        <div id="score" class = "display-6"></div>
+        <div id="score" class = "display-6">
+        </div>
         <button id="reset" style = "display: none;" class = "my-5 display-6">Reset</button>
         </div>  
         
