@@ -2,6 +2,8 @@
 
 Rock, Paper, Scissors app (The Odin Project)
 
+* [Live Demo](https://m3ghnaa.github.io/rock-paper-scissors/)
+
 Image and Gif credits:
 * https://pixabay.com/ - Images
 
