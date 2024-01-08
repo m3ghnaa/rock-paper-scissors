@@ -142,8 +142,10 @@
                 color: beige;
                 cursor: pointer;
                 transition: transform 0.8s ease-in-out;
-                height: 7vh;
+                padding: 10px;
                 border: 3px solid brown;
+                border-radius: 20px;
+                font-size: large;
             }
 
             #startGameButton:hover {
@@ -230,19 +232,19 @@ footer {
 
         <div id="landingScreen" class = "container-fluid text-center py-5" >
            
-            <h1 class = "display-4">Welcome to Rock, Paper, Scissors!</h1>
-            <p class = "display-5">Prepare for an epic showdown! To start the game, choose your weapon wisely:</p>
+            <h1 class = "display-5">Welcome to Rock, Paper, Scissors!</h1>
+            <p class = "display-6">Prepare for an epic showdown! To start the game, choose your weapon wisely:</p>
             <ul class = "display-6">
                 <li><i><span style = "color: brown">Rock, the timeless classic!</span></i></li>
                 <li><i><span style = "color: brown">Paper, the versatile victor!</span></i></li>
                 <li><i><span style = "color: brown">Scissors, the swift and sharp choice!</span></i></li>
             </ul>
             <p class = "display-6">Your goal: <u>Reach 5 points </u>before your virtual opponent. May the best player win!</p>
-            <button id="startGameButton" class = "display-6">Commence Battle</button>
+            <button id="startGameButton">Commence Battle</button>
         </div>
         
         <div id  = "gameScreen">
-        <h1 class = "display-2"> Let's play! 👊✋✌ </h1>
+        <h1 class = "display-5"> Let's play! 👊✋✌ </h1>
         
         <div id="computerChoice" style="display: none;">
             <img id="computerChoiceImage" class="img-fluid" alt="Computer's Choice">
@@ -250,7 +252,7 @@ footer {
         
         
 
-        <div class = "container result py-5 display-6">
+        <div class = "container result py-5" style = "font-size: larger;">
  
         <div id="results">     
         </div>
@@ -261,9 +263,9 @@ footer {
         <div id="loseGif" style="display: none;">
             <img src="https://media.giphy.com/media/10h8CdMQUWoZ8Y/giphy-downsized-large.gif" alt="You Lose GIF" id="loseGifImage" class = "img-fluid py-5">
         </div>
-        <div id="score" class = "display-6">
+        <div id="score" style = "font-size: larger;">
         </div>
-        <button id="reset" style = "display: none;" class = "my-5 display-6">Reset</button>
+        <button id="reset" style = "display: none; font-size: larger;" class = "my-5">Reset</button>
         </div>  
         
 
